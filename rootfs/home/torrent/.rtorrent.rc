@@ -17,6 +17,9 @@ min_peers_seed = 1
 max_peers_seed = 50
 max_uploads = 15
 
+download_rate = 0
+upload_rate = 100
+
 network.xmlrpc.size_limit.set = 10000000
 
 schedule = watch_directory,1,1,"load.start=/data/.watch/*.torrent"

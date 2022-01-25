@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  rtorrent:
+    build: .
+    container_name: rtorrent
+    restart: unless-stopped
+    tty: true
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 49184:49184
+      - 49184:49184/udp
+      - 3000:3000
+    environment:
+      - UID=1000
+      - GID=1000
+      - FLOOD_SECRET=UFNEvLL6HZQdtMxyfFk33kH1234567890
+      # - RTORRENT_SOCK=false
+    volumes:
+      - /Users/mulo/Torrent/flood:/flood-db
+      - /Users/mulo/Torrent/data:/data
